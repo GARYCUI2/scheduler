@@ -31,7 +31,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-backgrounds": "^5.3.22",
     "@storybook/addon-links": "^5.3.21",
@@ -39,6 +40,7 @@
     "@storybook/react": "^5.3.21",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^8.0.9",
+    "@testing-library/react-hooks": "^7.0.2",
     "node-sass": "^4.14.0"
   },
   "jest": {

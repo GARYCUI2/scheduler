@@ -1,13 +1,7 @@
 import React from "react";
-import classNames from "classnames";
 import "components/InterviewerList.scss"
 import InterviewerListItem from "components/InterviewerListItem"
 export default function InterviewerList(props) {
-
-//   const dayClass = classNames("day-list__item", {
-//     "day-list__item--selected": props.selected,
-//     "day-list__item--full": props.spots===0
-//  });
 
   const interviewers = props.interviewers.map((interviewer) => {
     return (
