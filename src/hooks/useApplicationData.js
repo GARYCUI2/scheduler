@@ -11,7 +11,6 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
   
-
   const bookInterview = (id, interview) => {
     // create a new appointment object with interview form information
     const appointment = {
@@ -28,9 +27,10 @@ export default function useApplicationData() {
     // update state after addition
     return axios.put(`/api/appointments/${id}`, { interview })
     .then((res) => {
-      console.log("ssss",res);
+      const days = state.days.map(day => day.name === state.day ? { ...day, spots: day.spots - 1} : day);
+
       setState(
-        prev => ({ ...prev, appointments })
+        prev => ({ ...prev, appointments, days })
       );
     });
   };
@@ -44,9 +44,9 @@ export default function useApplicationData() {
     // update state after addition
     return axios.delete(`/api/appointments/${id}`)
       .then((res) => {
-        console.log("delete",res);
+        const days = state.days.map(day => day.name === state.day ? { ...day, spots: day.spots + 1} : day);
         setState(
-          prev => ({ ...prev, appointments })
+          prev => ({ ...prev, appointments, days })
         );
       });
   }
@@ -59,7 +59,7 @@ export default function useApplicationData() {
       axios.get('http://localhost:8001/api/interviewers')
     ]).then((all) => {
       const [first, second, third] = all;
-
+      
       setState(prev => ({...prev, days: first.data, appointments: second.data, interviewers: third.data }));
     });
   }, []);
