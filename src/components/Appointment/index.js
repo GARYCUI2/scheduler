@@ -59,9 +59,6 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true))
   }
 
-
-
-
   return ( 
     <article className='appointment'>
       <Header time={props.time} />
@@ -102,8 +99,6 @@ export default function Appointment(props) {
         />
       }
 
-
-
       {mode === ERROR_SAVE &&
         (props.interview ?
           <Error message="Error on save! Please try again" onClose={back}/> :
@@ -113,12 +108,7 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE &&
         <Error message="Error on delete! Please try again" onClose={() => transition(SHOW)}/>
       }      
-
-
-
-
-    </article>
-        
+    </article>    
   );
 }
 

@@ -36,10 +36,6 @@ export default function Form(props) {
             name="name"
             type="text"
             placeholder="Enter Student Name"
-            /*
-              This must be a controlled component
-              your code goes here
-            */
             value={student}
             onChange={(event) => setStudent(event.target.value)}
             student={props.student}
@@ -49,7 +45,6 @@ export default function Form(props) {
         </form>
         <section className="appointment__validation" data-testid="error-msg">{error}</section>
         <InterviewerList 
-          /* your code goes here */
           interviewers={props.interviewers}
           value={interviewer}
           onChange={(interviewerID) => setInterviewer(interviewerID)}
