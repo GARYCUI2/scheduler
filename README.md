@@ -16,13 +16,17 @@ Dependencies include:
 - react-scripts: 3.0.0
 
 ##Screenshots
+!["edit-new"](https://github.com/GARYCUI2/scheduler/blob/9cd5ffb4256471f434cd480d8300431884654fb5/Docs/edit-new.PNG)
+!["index"](https://github.com/GARYCUI2/scheduler/blob/9cd5ffb4256471f434cd480d8300431884654fb5/Docs/index.PNG)
 
 ## Running Webpack Development Server
 
 ```sh
 npm start
 ```
+
 update re
+
 ## Running Jest Test Framework
 
 ```sh
