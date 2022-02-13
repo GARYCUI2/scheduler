@@ -68,7 +68,6 @@ export default function useApplicationData() {
       });
   }
 
-
   useEffect(() => {
     Promise.all([
       axios.get('http://localhost:8001/api/days'),

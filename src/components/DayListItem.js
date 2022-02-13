@@ -19,7 +19,6 @@ export default function DayListItem(props) {
     }
     
     return <h3 className="text--light">{props.spots} spots remaining</h3>
-    
   } 
 
   return (   

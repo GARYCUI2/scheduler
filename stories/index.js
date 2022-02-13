@@ -35,7 +35,6 @@ storiesOf("Button", module)
     </Button>
   ));
 
-
 storiesOf("DayListItem", module) //Initiates Storybook and registers our DayListItem component
 .addParameters({
   backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -112,7 +111,6 @@ storiesOf("InterviewerListItem", module)
       />
   ));
 
-
 const interviewers = [
 { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
 { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
@@ -142,7 +140,6 @@ backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
   onChange={action("setInterviewerId")}
 />
 ));
-
 
 storiesOf("Appointment", module)
 .addParameters({
@@ -184,6 +181,3 @@ onCancel={action("onCancel")}
     <Appointment time="5pm" />
   </Fragment>
 ))
-
-
-

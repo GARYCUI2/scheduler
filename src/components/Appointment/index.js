@@ -38,7 +38,6 @@ export default function Appointment(props) {
       })
   }
 
-
    // this is the function passed into Form component onSave property for mode CREATE
    function save(name, interviewer) {
     
@@ -108,4 +107,3 @@ export default function Appointment(props) {
     </article>    
   );
 }
-

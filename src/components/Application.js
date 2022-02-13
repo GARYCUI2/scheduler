@@ -14,7 +14,6 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
-
   // get appointments for a specific day, such as "Monday" appointments
   const appointments = getAppointmentsForDay(state, state.day).map((appointment) => {
     // get the interview for a specifc appointment time slot. This could be null if no one booked it
@@ -36,15 +35,13 @@ export default function Application(props) {
     );
   });
 
-
   return (
     <main className="layout">
       <section className="sidebar">
-
         <img
-        className="sidebar--centered"
-        src="images/logo.png"
-        alt="Interview Scheduler"
+          className="sidebar--centered"
+          src="images/logo.png"
+          alt="Interview Scheduler"
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
@@ -65,8 +62,7 @@ export default function Application(props) {
       <section className="schedule">
         {appointments}
         <Appointment key="last" time="5pm" />
-      </section>
-      
+      </section>     
     </main>
   );
 }
