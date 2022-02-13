@@ -41,12 +41,7 @@ export default function Appointment(props) {
 
    // this is the function passed into Form component onSave property for mode CREATE
    function save(name, interviewer) {
-     // user did not pick interviewer and try to save
-    if (interviewer === null) {
-      transition(ERROR_SAVE, true);
-      return;
-    }
-
+    
     const interview = {
       student: name,
       interviewer
