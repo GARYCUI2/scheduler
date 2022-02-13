@@ -12,6 +12,12 @@ export default function useApplicationData() {
   const setDay = day => setState({ ...state, day });
   
   const bookInterview = (id, interview) => {
+   
+    let isNewBook = false;
+    if (!state.appointments[id].interview) {
+      isNewBook = true;
+    }
+
     // create a new appointment object with interview form information
     const appointment = {
       ...state.appointments[id],
@@ -26,9 +32,12 @@ export default function useApplicationData() {
 
     // update state after addition
     return axios.put(`/api/appointments/${id}`, { interview })
-    .then((res) => {
-      const days = state.days.map(day => day.name === state.day ? { ...day, spots: day.spots - 1} : day);
-
+    .then((res) => { 
+      let days = state.days;
+      if (isNewBook) {
+        days = state.days.map(day => day.name === state.day ? { ...day, spots: day.spots - 1} : day);
+      }
+    
       setState(
         prev => ({ ...prev, appointments, days })
       );
@@ -36,11 +45,19 @@ export default function useApplicationData() {
   };
 
   function cancelInterview(id) {
-    //cancel appointment interview
-    const appointments = state.appointments;
+    // create a new appointment object with interview as null
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
 
-    appointments.id = null;
+    // add the new appointment created above into state.appointments
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
 
+    // cancel appointment interview
     // update state after addition
     return axios.delete(`/api/appointments/${id}`)
       .then((res) => {
