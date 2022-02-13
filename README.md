@@ -25,8 +25,6 @@ Dependencies include:
 npm start
 ```
 
-update re
-
 ## Running Jest Test Framework
 
 ```sh
